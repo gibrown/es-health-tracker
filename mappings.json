@@ -1,0 +1,74 @@
+{
+	"properties": {
+
+		"Timestamp" : {
+			"type": "date",
+			"format": "M/d/yyyy H:mm:ss||M/d/yyyy"
+		},
+		"Date" : {
+			"type": "date",
+			"format": "M/d/yyyy H:mm:ss||M/d/yyyy"
+		},
+
+
+		"Grip" : {
+				"type": "integer"
+		},
+		"HRV" : {
+				"type": "integer"
+		},
+		"Heel Raise" : {
+				"type": "integer"
+		},
+		"Pain" : {
+				"type": "integer"
+		},
+		"Resting HR" : {
+				"type": "integer"
+		},
+		"Stool" : {
+				"type": "integer"
+		},
+		"Volume" : {
+				"type": "integer"
+		},
+		"Time Minutes" : {
+				"type": "integer"
+		},
+
+		"APAP Hours" : {
+				"type": "float"
+		},
+		"Deep Hours" : {
+				"type": "float"
+		},
+		"Sleep Hours" : {
+				"type": "float"
+		},
+
+		"Natural" : {
+				"type": "keyword"
+		},
+
+		"Options" : {
+				"type": "keyword"
+		},
+		"Type" : {
+				"type": "keyword"
+		},
+		"Problems" : {
+				"type": "keyword"
+		},
+		"Status" : {
+				"type": "keyword"
+		},
+		"What" : {
+				"type": "keyword"
+		},
+
+		"Notes" : {
+				"type": "text"
+		}
+
+	}
+}
