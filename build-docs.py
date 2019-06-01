@@ -24,7 +24,7 @@ appl_use_duration = {
 }
 
 hrv_rename = {
-    "HRV": "HRV",
+    "HRV": "HRV_val",
     "Morning Readiness": "HRV_readiness",
     "HRV CV": "HRV_CV",
     "HR": "HRV_HR",
@@ -85,8 +85,8 @@ with open(csv_fname, 'r' ) as csvfile:
         if ( appl_file ):
             s = datetime.strptime( row["startDate"][0:-6], "%Y-%m-%d %H:%M:%S" )
             e = datetime.strptime( row["endDate"][0:-6], "%Y-%m-%d %H:%M:%S" )
-            doc['Timestamp'] = s.strftime( '%Y-%m-%d %H-%M-%S' )
-            doc['duration'] = (e - s).total_seconds()
+            doc['Timestamp'] = s.strftime( '%Y-%m-%d %H:%M:%S' )
+            doc['duration'] = int( (e - s).total_seconds() )
             if ( row['type'] in appl_use_duration ):
                 fld = row['type']
                 if ( row['type'] == 'SleepAnalysis' ):
@@ -97,10 +97,6 @@ with open(csv_fname, 'r' ) as csvfile:
 	        doc[fld] = float( row['value'] )
 	        if ( doc['duration'] > 0 ):
 	            doc[fld + '_rate'] = float( row['value'] ) / doc['duration']
-            if ( not p1 ):
-                sys.stderr.write( fld + "\n" )
-                sys.stderr.write( fld + "_rate\n" )
-                p1 = True
 
         elif ( symple_file ):
             d = datetime.strptime( row['Date'], '%Y-%m-%d' )
@@ -112,7 +108,7 @@ with open(csv_fname, 'r' ) as csvfile:
                 d += timedelta(hours=14)
             elif ( 'pm' == row['Period'] ):
                 d += timedelta(hours=20)
-            doc['Timestamp'] = d.strftime( '%Y-%m-%d %H-%M-%S' )
+            doc['Timestamp'] = d.strftime( '%Y-%m-%d %H:%M:%S' )
 
             blank = True
             for key, value in row.items():
@@ -132,7 +128,7 @@ with open(csv_fname, 'r' ) as csvfile:
                 continue
             d = datetime.strptime( row["Date Time Start"], "%Y-%m-%d %H:%M:%S" )
 	    doc['duration'] = int( round( float( row["Duration"] ) ) )
-            doc['Timestamp'] = d.strftime( '%Y-%m-%d %H-%M-%S' )
+            doc['Timestamp'] = d.strftime( '%Y-%m-%d %H:%M:%S' )
             for key, value in row.items():
                 if ( key in hrv_rename ):
                     if ( not value ):

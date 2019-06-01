@@ -35,8 +35,10 @@ python
 ``
 
 
-### Streaks
-
 ### Symple
 
-###
+Download all data form within the app
+
+### HRV Elite
+
+Requires a Pro account. Download from https://dashboard.elitehrv.com/personal/data/individual
