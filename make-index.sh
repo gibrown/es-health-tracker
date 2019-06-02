@@ -4,8 +4,10 @@
 source config.sh
 
 curl -X PUT "$INDEXURL" -H 'Content-Type: application/json' -d @index-settings.json
+echo ""
 
 curl -X PUT "$INDEXURL/_mapping" -H 'Content-Type: application/json' -d @mappings.json
+echo ""
 
 #exit
 

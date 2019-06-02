@@ -43,11 +43,14 @@ APPLFILES=(
 
 for F in ${SHEETFILES[*]}
 do
+	echo "$F"
 	python build-docs.py "$CSVPATH/$F.csv" > "$JSONPATH/$F.json"
 done
 
+echo "symple"
 python build-docs.py "$CSVPATH/symple.csv" > "$JSONPATH/symple.json"
 
+echo "hrv"
 python build-docs.py "$CSVPATH/hrv.csv" > "$JSONPATH/hrv.json"
 
 for F in ${APPLFILES[*]}

@@ -7,7 +7,7 @@ source config.sh
 JSONFILE="$1" #JSON file path name. One doc per line.
 
 DOCS=`wc -l $JSONFILE | awk {'print $1'}`
-echo "Indexing $DOCS documents to $INDEX on $SERVER in 5 sec"
+echo "Indexing $DOCS documents from $JSONFILE to $INDEX on $SERVER in 5 sec"
 sleep 5
 
 echo "Prepping bulk data"
