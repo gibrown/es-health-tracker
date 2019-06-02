@@ -1,158 +1,159 @@
 {
 	"properties": {
 
-		"Timestamp" : {
+		"timestamp" : {
 			"type": "date",
 			"format": "M/d/yyyy H:mm:ss||M/d/yyyy||yyyy-MM-dd HH:mm:ss"
 		},
-		"Date" : {
+		"date" : {
 			"type": "date",
 			"format": "M/d/yyyy H:mm:ss||M/d/yyyy||yyyy-MM-dd HH:mm:ss"
 		},
 
 
-		"Grip" : {
+		"grip" : {
 				"type": "integer"
 		},
-		"HRV" : {
+		"hrv" : {
 				"type": "integer"
 		},
-		"Heel Raise" : {
+		"heel_raise" : {
 				"type": "integer"
 		},
-		"Pain" : {
+		"pain" : {
 				"type": "integer"
 		},
-		"Resting HR" : {
+		"resting_hr" : {
 				"type": "integer"
 		},
-		"Stool" : {
+		"stool" : {
 				"type": "integer"
 		},
-		"Volume" : {
+		"volume" : {
 				"type": "integer"
 		},
-		"Time Minutes" : {
+		"time_minutes" : {
 				"type": "integer"
 		},
-		"Compression Hrs" : {
+		"compression_hrs" : {
 				"type": "integer"
 		},
 
-		"APAP Hours" : {
+		"apap_hours" : {
 				"type": "float"
 		},
-		"Deep Hours" : {
+		"deep_hours" : {
 				"type": "float"
 		},
-		"Sleep Hours" : {
+		"sleep_hours" : {
 				"type": "float"
 		},
 
-		"Natural" : {
+		"natural" : {
 				"type": "keyword"
 		},
 
-		"Options" : {
+		"options" : {
 				"type": "keyword"
 		},
-		"Type" : {
+		"type" : {
 				"type": "keyword"
 		},
-		"Problems" : {
+		"problems" : {
 				"type": "keyword"
 		},
-		"Status" : {
+		"status" : {
 				"type": "keyword"
 		},
-		"What" : {
+		"what" : {
 				"type": "keyword"
 		},
 
-		"Notes" : {
+		"notes" : {
 				"type": "text"
 		},
 
-		"Walking problems": { "type": "integer" },
-		"Legs Burning": { "type": "integer" },
-		"Muscle Weakness": { "type": "integer" },
-		"Hip Sore": { "type": "integer" },
-		"Spacisity": { "type": "integer" },
-		"Poor Balance": { "type": "integer" },
-		"Pain Level": { "type": "integer" },
-		"Depressed": { "type": "integer" },
-		"Almost fell": { "type": "integer" },
-		"Back pain": { "type": "integer" },
-		"Bad sleep": { "type": "integer" },
-		"Bowel discomfort": { "type": "integer" },
-		"CNS Fatigue tired": { "type": "integer" },
-		"Difficulty concentrating": { "type": "integer" },
-		"Fell": { "type": "integer" },
-		"Hand tingling": { "type": "integer" },
-		"Headache": { "type": "integer" },
-		"Insomnia": { "type": "integer" },
-		"Leg stiffness": { "type": "integer" },
-		"Nausea/dizzy": { "type": "integer" },
-		"Shoulder Soreness": { "type": "integer" },
-		"Socks on feet": { "type": "integer" },
-		"Stressed": { "type": "integer" },
-		"Weakness": { "type": "integer" },
-		"Exercise": { "type": "integer" },
+		"walking_problems": { "type": "integer" },
+		"legs_burning": { "type": "integer" },
+		"muscle_weakness": { "type": "integer" },
+		"hip_sore": { "type": "integer" },
+		"spacisity": { "type": "integer" },
+		"poor_balance": { "type": "integer" },
+		"pain_level": { "type": "integer" },
+		"depressed": { "type": "integer" },
+		"almost_fell": { "type": "integer" },
+		"back_pain": { "type": "integer" },
+		"bad_sleep": { "type": "integer" },
+		"bowel_discomfort": { "type": "integer" },
+		"cns_fatigue_tired": { "type": "integer" },
+		"difficulty_concentrating": { "type": "integer" },
+		"fell": { "type": "integer" },
+		"hand_tingling": { "type": "integer" },
+		"headache": { "type": "integer" },
+		"insomnia": { "type": "integer" },
+		"leg_stiffness": { "type": "integer" },
+		"nausea_dizzy": { "type": "integer" },
+		"shoulder_soreness": { "type": "integer" },
+		"socks_on_feet": { "type": "integer" },
+		"stressed": { "type": "integer" },
+		"weakness": { "type": "integer" },
+		"exercise": { "type": "integer" },
 
-		"HRV_val": { "type": "float" },
-		"HRV_readiness": { "type": "float" },
-		"HRV_CV": { "type": "float" },
-		"HRV_HR": { "type": "float" },
-		"HRV_lnRmssd": { "type": "float" },
-		"HRV_Rmssd": { "type": "float" },
-		"HRV_Nn50": { "type": "float" },
-		"HRV_Pnn50": { "type": "float" },
-		"HRV_Sdnn": { "type": "float" },
-		"HRV_low_power": { "type": "float" },
-		"HRV_hi_power": { "type": "float" },
-		"HRV_power_ratio": { "type": "float" },
-		"HRV_total_power": { "type": "float" },
+		"hrv_val": { "type": "float" },
+		"hrv_readiness": { "type": "float" },
+		"hrv_cv": { "type": "float" },
+		"hrv_hr": { "type": "float" },
+		"hrv_lnrmssd": { "type": "float" },
+		"hrv_rmssd": { "type": "float" },
+		"hrv_nn50": { "type": "float" },
+		"hrv_pnn50": { "type": "float" },
+		"hrv_sdnn": { "type": "float" },
+		"hrv_low_power": { "type": "float" },
+		"hrv_hi_power": { "type": "float" },
+		"hrv_power_ratio": { "type": "float" },
+		"hrv_total_power": { "type": "float" },
 
 		"duration" : {
 			"type": "integer"
 		},
 
-		"ActiveEnergyBurned_kcal":{"type": "float"},
-		"ActiveEnergyBurned_kcal_rate":{"type": "float"},
-		"AppleExerciseTime_min":{"type": "float"},
-		"AppleExerciseTime_min_rate":{"type": "float"},
-		"AppleStandHour":{"type": "float"},
-		"BasalEnergyBurned_kcal":{"type": "float"},
-		"BasalEnergyBurned_kcal_rate":{"type": "float"},
-		"BodyFatPercentage_%":{"type": "float"},
-		"BodyFatPercentage_%_rate":{"type": "float"},
-		"BodyMass_lb":{"type": "float"},
-		"BodyMass_lb_rate":{"type": "float"},
-		"BodyMassIndex_count":{"type": "float"},
-		"BodyMassIndex_count_rate":{"type": "float"},
-		"DistanceSwimming_yd":{"type": "float"},
-		"DistanceSwimming_yd_rate":{"type": "float"},
-		"DistanceWalkingRunning_mi":{"type": "float"},
-		"DistanceWalkingRunning_mi_rate":{"type": "float"},
-		"FlightsClimbed_count":{"type": "float"},
-		"FlightsClimbed_count_rate":{"type": "float"},
-		"HeartRate_count/min":{"type": "float"},
-		"HeartRate_count/min_rate":{"type": "float"},
-		"HeartRateVariabilitySDNN_ms":{"type": "float"},
-		"HeartRateVariabilitySDNN_ms_rate":{"type": "float"},
-		"HighHeartRateEvent":{"type": "float"},
-		"MindfulSession":{"type": "float"},
-		"RespiratoryRate_count/min":{"type": "float"},
-		"RespiratoryRate_count/min_rate":{"type": "float"},
-		"RestingHeartRate_count/min":{"type": "float"},
-		"RestingHeartRate_count/min_rate":{"type": "float"},
-		"SleepAnalysis_*":{"type": "float"},
-		"StepCount_count":{"type": "float"},
-		"StepCount_count_rate":{"type": "float"},
-		"SwimmingStrokeCount_count":{"type": "float"},
-		"SwimmingStrokeCount_count_rate":{"type": "float"},
-		"WalkingHeartRateAverage_count/min":{"type": "float"},
-		"WalkingHeartRateAverage_count/min_rat":{"type": "float"}
+		"activeenergyburned_kcal":{"type": "float"},
+		"activeenergyburned_kcal_rate":{"type": "float"},
+		"appleexercisetime_min":{"type": "float"},
+		"appleexercisetime_min_rate":{"type": "float"},
+		"applestandhour":{"type": "float"},
+		"basalenergyburned_kcal":{"type": "float"},
+		"basalenergyburned_kcal_rate":{"type": "float"},
+		"bodyfatpercentage_perc":{"type": "float"},
+		"bodyfatpercentage_perc_rate":{"type": "float"},
+		"bodymass_lb":{"type": "float"},
+		"bodymass_lb_rate":{"type": "float"},
+		"bodymassindex_count":{"type": "float"},
+		"bodymassindex_count_rate":{"type": "float"},
+		"distanceswimming_yd":{"type": "float"},
+		"distanceswimming_yd_rate":{"type": "float"},
+		"distancewalkingrunning_mi":{"type": "float"},
+		"distancewalkingrunning_mi_rate":{"type": "float"},
+		"flightsclimbed_count":{"type": "float"},
+		"flightsclimbed_count_rate":{"type": "float"},
+		"heartrate_count_min":{"type": "float"},
+		"heartrate_count_min_rate":{"type": "float"},
+		"heartratevariabilitysdnn_ms":{"type": "float"},
+		"heartratevariabilitysdnn_ms_rate":{"type": "float"},
+		"highheartrateevent":{"type": "float"},
+		"mindfulsession":{"type": "float"},
+		"respiratoryrate_count_min":{"type": "float"},
+		"respiratoryrate_count_min_rate":{"type": "float"},
+		"restingheartrate_count_min":{"type": "float"},
+		"restingheartrate_count_min_rate":{"type": "float"},
+		"sleepanalysis_asleep":{"type": "float"},
+		"sleepanalysis_inbed":{"type": "float"},
+		"stepcount_count":{"type": "float"},
+		"stepcount_count_rate":{"type": "float"},
+		"swimmingstrokecount_count":{"type": "float"},
+		"swimmingstrokecount_count_rate":{"type": "float"},
+		"walkingheartrateaverage_count_min":{"type": "float"},
+		"walkingheartrateaverage_count_min_rate":{"type": "float"}
 
 	}
 }

@@ -67,6 +67,14 @@ symple_rename = {
     '""Exercise""': "Exercise",
 }
 
+def clean_fld_name( fld ):
+    f = fld.lower()
+    f = f.replace( ' ', '_' )
+    f = f.replace( '-', '_' )
+    f = f.replace( '%', 'perc' )
+    f = f.replace( '/', '_' )
+    return f
+
 appl_file = False
 symple_file = False
 hrv_file = False
@@ -85,18 +93,18 @@ with open(csv_fname, 'r' ) as csvfile:
         if ( appl_file ):
             s = datetime.strptime( row["startDate"][0:-6], "%Y-%m-%d %H:%M:%S" )
             e = datetime.strptime( row["endDate"][0:-6], "%Y-%m-%d %H:%M:%S" )
-            doc['Timestamp'] = s.strftime( '%Y-%m-%d %H:%M:%S' )
+            doc['timestamp'] = s.strftime( '%Y-%m-%d %H:%M:%S' )
             doc['duration'] = int( (e - s).total_seconds() )
             if ( row['type'] in appl_use_duration ):
                 fld = row['type']
                 if ( row['type'] == 'SleepAnalysis' ):
                     fld = fld + '_' + row['value'].replace( 'HKCategoryValueSleepAnalysis', '' )
-                doc[fld] = doc['duration']
+                doc[clean_fld_name(fld)] = doc['duration']
             else:
 	        fld = row['type'] + '_' + row['unit']
-	        doc[fld] = float( row['value'] )
+	        doc[clean_fld_name(fld)] = float( row['value'] )
 	        if ( doc['duration'] > 0 ):
-	            doc[fld + '_rate'] = float( row['value'] ) / doc['duration']
+	            doc[clean_fld_name(fld + '_rate')] = float( row['value'] ) / doc['duration']
 
         elif ( symple_file ):
             d = datetime.strptime( row['Date'], '%Y-%m-%d' )
@@ -108,7 +116,7 @@ with open(csv_fname, 'r' ) as csvfile:
                 d += timedelta(hours=14)
             elif ( 'pm' == row['Period'] ):
                 d += timedelta(hours=20)
-            doc['Timestamp'] = d.strftime( '%Y-%m-%d %H:%M:%S' )
+            doc['timestamp'] = d.strftime( '%Y-%m-%d %H:%M:%S' )
 
             blank = True
             for key, value in row.items():
@@ -119,7 +127,7 @@ with open(csv_fname, 'r' ) as csvfile:
                     	v = int( value )
                     if ( v > 0 ):
                         blank = False
-                        doc[symple_rename[key]] = v
+                        doc[clean_fld_name(symple_rename[key])] = v
             if ( blank ):
                 continue   #blank doc
 
@@ -128,14 +136,14 @@ with open(csv_fname, 'r' ) as csvfile:
                 continue
             d = datetime.strptime( row["Date Time Start"], "%Y-%m-%d %H:%M:%S" )
 	    doc['duration'] = int( round( float( row["Duration"] ) ) )
-            doc['Timestamp'] = d.strftime( '%Y-%m-%d %H:%M:%S' )
+            doc['timestamp'] = d.strftime( '%Y-%m-%d %H:%M:%S' )
             for key, value in row.items():
                 if ( key in hrv_rename ):
                     if ( not value ):
                     	v = 0
                     else:
                     	v = float( value )
-                    doc[hrv_rename[key]] = v
+                    doc[clean_fld_name(hrv_rename[key])] = v
 
         else:
             for key, value in row.items():
@@ -144,10 +152,10 @@ with open(csv_fname, 'r' ) as csvfile:
                     if not value:
                         v = []
                     else:
-                        v = value.split( ', ' )
+                        v = value.split( ',' )
                         while("" in v) :
 			    v.remove("")
-                doc[key] = v
+                doc[clean_fld_name(key)] = v
 
         print( json.dumps(doc, separators=(',',':')) )
 
