@@ -35,6 +35,9 @@
 		"Time Minutes" : {
 				"type": "integer"
 		},
+		"Compression Hrs" : {
+				"type": "integer"
+		},
 
 		"APAP Hours" : {
 				"type": "float"

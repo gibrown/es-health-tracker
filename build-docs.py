@@ -145,6 +145,8 @@ with open(csv_fname, 'r' ) as csvfile:
                         v = []
                     else:
                         v = value.split( ', ' )
+                        while("" in v) :
+			    v.remove("")
                 doc[key] = v
 
         print( json.dumps(doc, separators=(',',':')) )

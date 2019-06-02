@@ -2,11 +2,16 @@
 
 source config.sh
 
-FILES=(
+SHEETFILES=(
 	Notes
 	MorningCheckin
 	NightCheckin
 	Bowels
+	BFMornCheckin
+	BFNightCheckin
+	BFBowels1
+	BFBowels2
+	BFNotes
 )
 
 APPLFILES=(
@@ -36,7 +41,7 @@ APPLFILES=(
 #	Workout
 )
 
-for F in ${FILES[*]}
+for F in ${SHEETFILES[*]}
 do
 	python build-docs.py "$CSVPATH/$F.csv" > "$JSONPATH/$F.json"
 done
