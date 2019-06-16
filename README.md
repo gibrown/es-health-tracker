@@ -8,13 +8,28 @@ Inspired from: https://www.elastic.co/blog/managing-my-type-1-diabetes-with-elas
 
 ## Using
 
-make index
+Open two terminals and start ES and Kibana with:
+```
+> cd es/elasticsearch-7.1.0
+> bin/elasticsearch
+```
 
+and
 
-Open your browser
-http://localhost:5601
+```
+> es/kibana-7.1.0
+> bin/kibana
+```
 
+Update and import all data into a new index (may need to change index name in config.sh):
 
+```
+> ./get-tracking-csvs.sh
+> ./convert-to-json.sh
+> ./make-index.sh
+```
+
+Open http://localhost:5601/app/kibana#/home?_g=()
 
 ## Gathering Data
 
@@ -42,3 +57,19 @@ Download all data form within the app
 ### HRV Elite
 
 Requires a Pro account. Download from https://dashboard.elitehrv.com/personal/data/individual
+
+
+Below is a table of 9 items.
+
+Bowels - time
+
+
+
+Swimming Distance
+Energy Burned
+Sleep
+Weight
+Pain
+HRV Power
+HRV
+Walking/Running Distance

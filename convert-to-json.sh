@@ -53,6 +53,8 @@ python build-docs.py "$CSVPATH/symple.csv" > "$JSONPATH/symple.json"
 echo "hrv"
 python build-docs.py "$CSVPATH/hrv.csv" > "$JSONPATH/hrv.json"
 
+python applehealth2json.py "$CSVPATH/apple_health_export/export.xml"
+
 for F in ${APPLFILES[*]}
 do
 	echo "$F"
