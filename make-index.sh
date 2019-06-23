@@ -3,6 +3,9 @@
 
 source config.sh
 
+curl -X DELETE "$INDEXURL" -H 'Content-Type: application/json'
+echo ""
+
 curl -X PUT "$INDEXURL" -H 'Content-Type: application/json' -d @index-settings.json
 echo ""
 

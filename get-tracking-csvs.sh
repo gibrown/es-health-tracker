@@ -18,37 +18,7 @@ WSHEETS=
 MONTHLY=""
 MSHEETS=
 
-function i_do_say() {
-	osascript -e "display notification \"$*\" with title \"Do It\""
-	say --rate 250 $*
-}
-
-function timed_confirm() {
-	i_do_say $1
-	delay=$3
-	cnt=0
-	while true; do
-		read -n 1 -t $delay -p "$delay seconds: 'd' to delay 5 min or any key to continue" varkey
-		if [ $? -ne 0 ]; then
-			echo
-			i_do_say $2
-			cnt=$((cnt+1))
-			if [[ "$cnt" -gt 7 ]]; then
-				cnt=0
-				i_do_say 'Are you paying attention? Time to start a different script?'
-			fi
-		elif [ "d" == "$varkey" ]; then
-			varkey=''
-			delay="$(($delay + 300))"
-			echo
-			echo "Delaying 5 min"
-		else
-			echo
-			break
-		fi
-done
-}
-
+source timed-functions.sh
 
 for S in ${TSHEETS[*]}
 do
@@ -65,7 +35,7 @@ done
 #done
 
 open https://dashboard.elitehrv.com/personal/data/individual
-timed_confirm "Download HRV" "Done with HRV Download?" 300
+timed_confirm "Download HRV from 2017 and move to hrv.csv" "Done with HRV Download?" 300
 
 timed_confirm "Download Symple Data from App, then will move" "Done with Symple?" 300
 mv ~/Downloads/export.csv data/raw/symple.csv
