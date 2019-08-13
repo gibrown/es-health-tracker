@@ -99,7 +99,9 @@ with open(csv_fname, 'r' ) as csvfile:
                 fld = row['type']
                 if ( row['type'] == 'SleepAnalysis' ):
                     fld = fld + '_' + row['value'].replace( 'HKCategoryValueSleepAnalysis', '' )
-                doc[clean_fld_name(fld)] = doc['duration']
+	            doc[clean_fld_name(fld)] = float( doc['duration'] ) / 60 / 60
+                else:
+	            doc[clean_fld_name(fld)] = doc['duration']
             else:
 	        fld = row['type'] + '_' + row['unit']
 	        doc[clean_fld_name(fld)] = float( row['value'] )
@@ -155,6 +157,7 @@ with open(csv_fname, 'r' ) as csvfile:
                         v = value.split( ',' )
                         while("" in v) :
 			    v.remove("")
+                        v = [x.lstrip().rstrip() for x in v]
                 doc[clean_fld_name(key)] = v
 
         print( json.dumps(doc, separators=(',',':')) )
